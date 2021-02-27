@@ -1,39 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include("./partials/head.ejs") %>
-
-  <body>
+<body>
     <%- include("./partials/nav.ejs") %>
-      <label>Cosmetic Products</label>
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Product Name</th>
-            <th scope="col">Cost</th>
-            <th scope="col">Adress</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>&#8377 600</td>
-            <td>dfdsgrsh</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>&#8377 500</td>
-            <td>dfdsgvrsf</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry the Bird</td>
-            <td>&#8377 400</td>
-            <td>dhgastvsobrevbe</td>
-          </tr>
-        </tbody>
-      </table>
-  </body>
+    <form action='/past-orders' method="POST">
+        <div>
+            <label for="block" class="form-label">Hostel Block</label>
+            <input class="form-control" list="datalistOptions" id="block" name="block" placeholder="Type to search..." required>
+            <datalist id="datalistOptions">
+                <option value="A">
+                <option value="B">
+                <option value="C">
+            </datalist>
+        </div>
+        <div>
+            <label for="number" class="form-label">Hostel Number</label>
+            <input class="form-control" list="datalistOptions" id="number" name="number" placeholder="Type to search..." required>
+            <datalist id="datalistOptions">
+                <option value="1">
+                <option value="2">
+                <option value="3">
+            </datalist>
+        </div>
+        <div>
+            <label for="room">Room Number</label>
+            <input type="text" placeholder="Enter your room number" id="room" name="room" required>
+        </div>
+        <div>
+            <label for="date"> Date of Delivery</label>
+            <input type="text" placeholder="Prefered date for delivery" name="date" id="date" required>
+        </div>
+        <div>
+            <label for="student-id">Student ID</label>
+            <input type="text" id="studentID" name="studentID" placeholder="Enter your id" required>
+        </div>
+        <div>
+            <label for="productID">Product ID</label>
+            <input type="text" id="productID" placeholder="Enter your product id" name="productID" required>
+        </div>
+        <button>Submit</button>
+    </form>
+    <footer>Delivery Charges are applicable</footer>
+</body>
+
 </html>

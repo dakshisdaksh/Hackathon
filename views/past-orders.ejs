@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs") %>
+<body>
+    <%- include("./partials/nav.ejs") %>
+    <h1>Hey there</h1>
+    <% if (del.length>0){ %>
+        <div>
+        <% del.forEach(del=> { %>
+            <h3>Hostel Block: <%= del.block %></h3>
+            <h3>Hostel Number: <%= del.number %></h3>
+            <h3>Room No: <%= del.room %></h3>
+            <h3>Date of Delivery<%= del.date %></h3>
+            <h3>Product ID: <%= del.productID %></h3>
+            <h3>Student ID: <%= del.studentID %></h3>
+        </div>
+        <% }) %>
+    <% } else { %>
+        <p>You haven't placed any orders yet</p>
+    <% } %>
+            
+</body>
+</html>

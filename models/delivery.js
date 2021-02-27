@@ -18,14 +18,14 @@ const delSchema= new Schema({
         type: String,
         required: true,
     },
-    /*studentID: {
+    studentID: {
         type: String,
         required: true,
     },
     productID: {
         type: String,
         required: true,
-    },*/
+    },
 }, {timestamps: true});
 
 const Del= mongoose.model('Del', delSchema);
