@@ -9,6 +9,7 @@ const app=express();
 
 app.set('view engine', 'ejs');
 
+//The following comments are for interfacing with google. Do not bother reading if not interested
 /*app.use(bodyParser.urlencoded({extended: false}));
 
 app.use(bodyParser.json());
@@ -31,7 +32,7 @@ app.get('google/callback', passport.authenticate('google', {failureRedirect: '/f
     res.redirect('/good');
 });*/
 
-const dbURI= "mongodb+srv://BITSPhoenix:@BITS123@cluster0.e8jal.mongodb.net/test?retryWrites=true&w=majority";
+const dbURI= "mongodb+srv://<userID>:<password>@cluster0.e8jal.mongodb.net/test?retryWrites=true&w=majority";
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology:true})
 .then((result)=>app.listen('8080'))
 .catch((err)=> console.log(err));
