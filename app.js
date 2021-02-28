@@ -1,10 +1,35 @@
 const express= require('express');
 const mongoose= require('mongoose');
+//const passport = require('passport');
 const Del= require('./models/delivery');
+/*const cookieSession= require('cookie-session');
+require('./passport-setup');*/
 
 const app=express();
 
 app.set('view engine', 'ejs');
+
+/*app.use(bodyParser.urlencoded({extended: false}));
+
+app.use(bodyParser.json());
+
+app.use(cookieSession({
+    name: 'session',
+    keys: ['key1', 'key2']
+}))
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.get('/failed', (req, res)=> res,send('You failed to log in!'));
+app.get('/good', (req, res)=> res.send('Welcome mr ${req.user.email}!'));
+
+app.get('/google', passport.authenticate('google', {scope: ['profile', 'email']}));
+
+app.get('google/callback', passport.authenticate('google', {failureRedirect: '/failed'}),
+(req, res)=>{
+    res.redirect('/good');
+});*/
 
 const dbURI= "mongodb+srv://BITSPhoenix:@BITS123@cluster0.e8jal.mongodb.net/test?retryWrites=true&w=majority";
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology:true})
@@ -27,6 +52,10 @@ app.post('/past-orders', (req,res)=>{
 });
 
 app.get('/', (req, res)=>{
+    res.render('sign-in', {title: 'Sign-in'});
+});
+
+app.get('/home', (req, res)=>{
     res.render('index', {title: 'Homepage'});
 });
 

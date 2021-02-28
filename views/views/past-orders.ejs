@@ -3,7 +3,7 @@
     <%- include("./partials/head.ejs") %>
 <body>
     <%- include("./partials/nav.ejs") %>
-    <p>Hey there</p>
+    <h1>Hey there</h1>
     <% if (del.length>0){ %>
         <div>
         <% del.forEach(del=> { %>
@@ -14,7 +14,6 @@
             <h3>Product ID: <%= del.productID %></h3>
             <h3>Student ID: <%= del.studentID %></h3>
         </div>
-    </br>
         <% }) %>
     <% } else { %>
         <p>You haven't placed any orders yet</p>

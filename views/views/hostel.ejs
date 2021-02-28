@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+<body>
+    <%- include("./partials/nav.ejs") %>
+    <form action='/past-orders' method="POST">
+        <div>
+            <label for="block" class="form-label">Hostel Block</label>
+            <input class="form-control" list="datalistOptions" id="block" name="block" placeholder="Type to search..." required>
+            <datalist id="datalistOptions">
+                <option value="A">
+                <option value="B">
+                <option value="C">
+            </datalist>
+        </div>
+        <div>
+            <label for="number" class="form-label">Hostel Number</label>
+            <input class="form-control" list="datalistOptions" id="number" name="number" placeholder="Type to search..." required>
+            <datalist id="datalistOptions">
+                <option value="1">
+                <option value="2">
+                <option value="3">
+            </datalist>
+        </div>
+        <div>
+            <label for="room">Room Number</label>
+            <input type="text" placeholder="Enter your room number" id="room" name="room" required>
+        </div>
+        <div>
+            <label for="date"> Date of Delivery</label>
+            <input type="text" placeholder="Prefered date for delivery" name="date" id="date" required>
+        </div>
+        <div>
+            <label for="student-id">Student ID</label>
+            <input type="text" id="studentID" name="studentID" placeholder="Enter your id" required>
+        </div>
+        <div>
+            <label for="productID">Product ID</label>
+            <input type="text" id="productID" placeholder="Enter your product id" name="productID" required>
+        </div>
+        <button>Submit</button>
+    </form>
+    <footer>Delivery Charges are applicable</footer>
+</body>
+
+</html>
